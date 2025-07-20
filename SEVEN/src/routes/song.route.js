@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const FileUpload = require('../service/storage.service');
 // Importing multer for file uploads
 // We use multer to handle multipart/form-data which is used for uploading files
 const multer = require('multer');
@@ -15,10 +15,15 @@ router.get('/', (req, res) => {
     res.send('Song route is working!');
 });
 
-router.post('/', upload.single('audio'), (req, res) => {
+router.post('/', upload.single('audio'), async (req, res) => {
     console.log(req.body);
     console.log(req.file);
-    res.status(201).send('Song created successfully!');
+    const fileData = await FileUpload(req.file);
+    console.log(fileData);
+    res.status(201).json({
+        message: 'File uploaded successfully',
+        song: req.body
+    });
 });
 
 module.exports = router;
