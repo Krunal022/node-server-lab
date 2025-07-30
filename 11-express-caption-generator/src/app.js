@@ -6,6 +6,6 @@ const authRoutes = require('./routes/auth.routes');
 
 app.use(express.json())
 app.use(cookieParser())
-app.use('/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 
 module.exports = app
