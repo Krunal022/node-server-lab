@@ -6,12 +6,26 @@ const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY
 });
 
-async function main() {
+async function generateCaption(base64ImageFile) {
+    // Generate a caption for the image using Gemini AI
+    const contents = [
+        {
+            inlineData: {
+                mimeType: "image/jpeg",
+                data: base64ImageFile,
+            },
+        },
+        { text: "Caption this image in 30 words using a mix of Hinglish and English with a chill, stylish Instagram vibe. Use trendy slang, emojis, and include 3–4 cool hashtags." },
+    ];
+
+    // Call the Gemini AI model to generate the caption
     const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: "Explain how AI works in a few words",
+        contents: contents,
     });
-    console.log(response.text);
+
+    // Return the generated caption
+    return response.text;
 }
 
-main();
+module.exports = generateCaption;
