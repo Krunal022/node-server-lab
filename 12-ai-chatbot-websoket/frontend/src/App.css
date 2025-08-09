@@ -1,0 +1,116 @@
+/* Mobile first approach */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 600px; /* Maximum width for larger screens */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.app-header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.chat-container {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 20px;
+  max-width: 70%;
+}
+
+.message.user {
+  background-color: #DCF8C6;
+  align-self: flex-end;
+}
+
+.message.ai {
+  background-color: #ECE5DD;
+  align-self: flex-start;
+}
+
+.input-form {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ccc;
+}
+
+.message-input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.send-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .app-container {
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .message {
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+  }
+
+  .message-input {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+  }
+
+  .send-button {
+    padding: 0.8rem 1.6rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+  }
+}
