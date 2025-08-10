@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const indexRoutes = require('./routes/index.route')
 const app = express()
