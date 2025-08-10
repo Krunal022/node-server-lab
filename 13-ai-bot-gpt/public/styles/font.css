@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Cabinet';
+    /* src: url('./../assets/Fonts/CabinetGrotesk-Black.woff2') format('woff2'); */
+    src: url('./../assets/Fonts/CabinetGrotesk-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabinet';
+    src: url('./../assets/Fonts/CabinetGrotesk-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabinet';
+    src: url('./../assets/Fonts/CabinetGrotesk-Extrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabinet';
+    src: url('./../assets/Fonts/CabinetGrotesk-Extralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabinet';
+    src: url('./../assets/Fonts/CabinetGrotesk-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabinet';
+    src: url('./../assets/Fonts/CabinetGrotesk-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabinet';
+    src: url('./../assets/Fonts/CabinetGrotesk-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabinet';
+    src: url('./../assets/Fonts/CabinetGrotesk-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabinet';
+    src: url('./../assets/Fonts/CabinetGrotesk-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Telma';
+    src: url('./../assets/Fonts/Telma-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Telma';
+    src: url('./../assets/Fonts/Telma-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Telma';
+    src: url('./../assets/Fonts/Telma-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Telma';
+    src: url('./../assets/Fonts/Telma-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Telma';
+    src: url('./../assets/Fonts/Telma-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Telma';
+    src: url('./../assets/Fonts/Telma-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
