@@ -1,13 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Hello World</h1>
-    <p>This is a simple EJS template.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot - Just for You</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="/styles/index.css" />
+  </head>
+  <body>
+    <div class="blob-background">
+      <!-- Noise texture overlay -->
+      <div class="noise-overlay"></div>
+
+      <!-- Home Page Content -->
+      <div class="content" id="homeContent">
+        <h1 class="title">
+          Build something <span class="heart-lovable">❤️</span>
+        </h1>
+        <p class="subtitle">
+          Let’s talk… you bring the charm, I’ll bring the blush 🫣
+        </p>
+
+        <!-- Demo input field -->
+        <div class="input-container">
+          <div class="input-box">
+            <button class="plus-btn">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+            <input
+              type="text"
+              placeholder="Let’s talk… "
+              class="input-field"
+              id="homeInput"
+            />
+            <div class="controls">
+              <button class="control-btn">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.42 16.4a2 2 0 0 1-2.83-2.83l8.49-8.49"
+                  ></path>
+                </svg>
+                Attach
+              </button>
+              <button class="control-btn">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path
+                    d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
+                  ></path>
+                  <path d="M2 12h20"></path>
+                </svg>
+                Public
+              </button>
+              <div class="gpt-badge">GPT-5</div>
+              <button class="send-btn" id="homeSendBtn">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M7 17L17 7"></path>
+                  <path d="M7 7h10v10"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversation Page Content -->
+      <div class="conversation-container" id="conversationContent">
+        <div class="conversation-header">
+          <button class="back-btn" id="backBtn">←</button>
+          <div class="conversation-title">AI Assistant</div>
+          <div></div>
+          <!-- Spacer for flexbox centering -->
+        </div>
+
+        <div class="messages-container" id="messagesContainer">
+          <!-- Messages will be added here dynamically -->
+        </div>
+
+        <div class="conversation-input">
+          <div class="input-box">
+            <button class="plus-btn">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+            <input
+              type="text"
+              placeholder="Type your message..."
+              class="input-field"
+              id="conversationInput"
+            />
+            <button class="send-btn" id="conversationSendBtn">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M7 17L17 7"></path>
+                <path d="M7 7h10v10"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/scripts/index.js"></script>
+  </body>
 </html>
