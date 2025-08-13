@@ -89,7 +89,7 @@ function showAITyping() {
     typingDiv.id = "aiTyping";
 
     const typingText = document.createElement("span");
-    typingText.textContent = "";
+    typingText.textContent = "Thinking...";
 
     const typingDots = document.createElement("div");
     typingDots.className = "typing-dots";

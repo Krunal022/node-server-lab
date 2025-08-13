@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 async function getRegisterController(req, res) {
-    res.render('register')
+    return res.render('register')
 }
 
 async function postRegisterController(req, res) {
@@ -34,11 +34,11 @@ async function postRegisterController(req, res) {
 
     res.cookie('token', token);
 
-    res.status(201).json({ message: 'User registered successfully!', user: newUser, token });
+    return res.redirect("/auth/login");
 }
 
 async function getLoginController(req, res) {
-    res.render('login')
+    return res.render('login')
 }
 
 async function postLoginController(req, res) {
@@ -61,13 +61,18 @@ async function postLoginController(req, res) {
 
     res.cookie('token', token);
 
-    res.status(200).json({ message: 'Login successful', user, token });
+    return res.redirect("/");
 }
 
+async function userLogout(req, res) {
+    res.clearCookie('token');
+    return res.redirect('/auth/login');
+}
 
 module.exports = {
     postRegisterController,
     getRegisterController,
     getLoginController,
-    postLoginController
+    postLoginController,
+    userLogout
 }
