@@ -1,3 +1,6 @@
+const socket = io();
+
+
 // DOM elements
 const homeContent = document.getElementById("homeContent");
 const conversationContent = document.getElementById(
@@ -17,18 +20,18 @@ let isInConversation = false;
 let messages = [];
 
 // Dummy AI responses
-const dummyResponses = [
-    "I'd be happy to help you create that! Let me break it down into steps...",
-    "That's a great idea! Here's how we can approach this project...",
-    "I can definitely help you build that. Let me start by creating the basic structure...",
-    "Excellent project choice! Let me generate the code for you...",
-    "I'll create a beautiful and functional solution for you. Here's what I'm building...",
-    "That sounds like an interesting challenge! Let me craft the perfect solution...",
-    "I'm excited to help you build this! Let me start coding right away...",
-    "Perfect! I'll create something amazing for you. Here's the implementation...",
-    "I love this idea! Let me build it step by step...",
-    "This is going to be fantastic! Let me create the code structure...",
-];
+// const dummyResponses = [
+//     "I'd be happy to help you create that! Let me break it down into steps...",
+//     "That's a great idea! Here's how we can approach this project...",
+//     "I can definitely help you build that. Let me start by creating the basic structure...",
+//     "Excellent project choice! Let me generate the code for you...",
+//     "I'll create a beautiful and functional solution for you. Here's what I'm building...",
+//     "That sounds like an interesting challenge! Let me craft the perfect solution...",
+//     "I'm excited to help you build this! Let me start coding right away...",
+//     "Perfect! I'll create something amazing for you. Here's the implementation...",
+//     "I love this idea! Let me build it step by step...",
+//     "This is going to be fantastic! Let me create the code structure...",
+// ];
 
 // Switch to conversation mode
 function switchToConversation() {
@@ -119,18 +122,14 @@ function hideAITyping() {
 function simulateAIResponse() {
     showAITyping();
 
-    // Random delay between 1-3 seconds
-    const delay = 1000 + Math.random() * 2000;
-
-    setTimeout(() => {
+    // Socket event listener for AI response
+    // AI response received from server and displayed in chat
+    socket.on("ai-message-response", (response) => {
         hideAITyping();
-
-        // Get random response
-        const randomResponse =
-            dummyResponses[Math.floor(Math.random() * dummyResponses.length)];
-        addMessage(randomResponse, false);
-    }, delay);
+        addMessage(response, false);
+    });
 }
+simulateAIResponse();
 
 // Send message
 function sendMessage() {
@@ -144,6 +143,11 @@ function sendMessage() {
         switchToConversation();
     }
 
+    // Emit message to server
+    // This will trigger the socket event in socket.server.js
+    // User message sent to server
+    socket.emit("message", message);
+
     // Add user message
     addMessage(message, true);
 
@@ -151,7 +155,7 @@ function sendMessage() {
     input.value = "";
 
     // Simulate AI response
-    simulateAIResponse();
+    // simulateAIResponse();
 }
 
 // Event listeners
