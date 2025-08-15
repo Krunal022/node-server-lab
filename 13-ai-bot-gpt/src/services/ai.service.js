@@ -1,6 +1,8 @@
 const { GoogleGenAI } = require("@google/genai");
 
-const ai = new GoogleGenAI({});
+const ai = new GoogleGenAI({
+    apiKey: process.env.GOOGLE_AI_API_KEY
+});
 
 async function aiService(prompt) {
     // Add formatting instructions for code responses

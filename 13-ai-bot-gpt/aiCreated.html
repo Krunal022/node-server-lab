@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jane Doe - Portfolio</title>
+    <style>
+      /* CSS Reset */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #e44d26; /* Example accent color */
+      }
+
+      header p {
+        font-size: 1.1rem;
+        color: #777;
+      }
+
+      /* Section Styles */
+      section {
+        margin-top: 30px;
+        padding: 30px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+
+      section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+      }
+
+      /* About Section */
+      #about p {
+        text-align: justify;
+      }
+
+      /* Portfolio Section */
+      #portfolio {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .project {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .project img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .project-info {
+        padding: 15px;
+      }
+
+      .project-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+      }
+
+      .project-info p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      /* Contact Section */
+      #contact form {
+        display: grid;
+        gap: 15px;
+      }
+
+      #contact label {
+        font-weight: bold;
+      }
+
+      #contact input,
+      #contact textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      #contact button {
+        background-color: #e44d26;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      #contact button:hover {
+        background-color: #d1421e;
+      }
+
+      /* Footer Styles */
+      footer {
+        text-align: center;
+        padding: 20px 0;
+        background-color: #333;
+        color: white;
+        margin-top: 30px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        #portfolio {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Jane Doe</h1>
+        <p>Web Developer & Designer</p>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="project">
+            <img
+              src="https://images.wallpapersden.com/image/download/black-and-white-image-of-lake-sweden-pier-4k_bWZsammUmZqaraWkpJRpZWWtaGVl.jpg"
+              alt="Project 1"
+            />
+            <div class="project-info">
+              <h3>Project 1</h3>
+              <p>A brief description of project 1.</p>
+            </div>
+          </div>
+          <div class="project">
+            <img
+              src="https://images.wallpapersden.com/image/download/island-4k_a2hsaGWUmZqaraWkpJRpZWWtaGVl.jpg"
+              alt="Project 2"
+            />
+            <div class="project-info">
+              <h3>Project 2</h3>
+              <p>A brief description of project 2.</p>
+            </div>
+          </div>
+          <div class="project">
+            <img
+              src="https://i.pinimg.com/474x/2c/6b/57/2c6b575e60352ecae35cd6d567c46ef9--atlantis.jpg"
+              alt="Project 3"
+            />
+            <div class="project-info">
+              <h3>Project 3</h3>
+              <p>A brief description of project 3.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Jane Doe. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // You can add some simple JavaScript here if needed, like form validation
+    </script>
+  </body>
+</html>
