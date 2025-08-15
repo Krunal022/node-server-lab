@@ -315,6 +315,10 @@
      gap: 1rem;
  }
 
+ .messages-container::-webkit-scrollbar {
+     display: none;
+ }
+
  .message {
      display: flex;
      gap: 1rem;
@@ -849,4 +853,112 @@
          padding: 0.5rem 0.75rem;
          min-height: 44px;
      }
+ }
+
+ /* Code block styles for AI messages */
+ .message.ai .message-content pre {
+     background-color: rgba(0, 0, 0, 0.3);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     border-radius: 8px;
+     padding: 1rem;
+     margin: 0.5rem 0;
+     overflow-x: auto;
+     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, 'Courier New', monospace;
+     font-size: 0.85rem;
+     line-height: 1.4;
+     color: #e6e6e6;
+ }
+
+ .message.ai .message-content code {
+     background-color: rgba(0, 0, 0, 0.2);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     border-radius: 4px;
+     padding: 0.2rem 0.4rem;
+     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, 'Courier New', monospace;
+     font-size: 0.85rem;
+     color: #e6e6e6;
+ }
+
+ .message.ai .message-content pre code {
+     background-color: transparent;
+     border: none;
+     padding: 0;
+     color: inherit;
+ }
+
+ .message.ai .message-content p {
+     margin: 0.5rem 0;
+ }
+
+ .message.ai .message-content p:first-child {
+     margin-top: 0;
+ }
+
+ .message.ai .message-content p:last-child {
+     margin-bottom: 0;
+ }
+
+ .message.ai .message-content ul,
+ .message.ai .message-content ol {
+     margin: 0.5rem 0;
+     padding-left: 1.5rem;
+ }
+
+ .message.ai .message-content li {
+     margin: 0.25rem 0;
+ }
+
+ .message.ai .message-content h1,
+ .message.ai .message-content h2,
+ .message.ai .message-content h3,
+ .message.ai .message-content h4,
+ .message.ai .message-content h5,
+ .message.ai .message-content h6 {
+     margin: 1rem 0 0.5rem 0;
+     color: #ffffff;
+     font-weight: 600;
+ }
+
+ .message.ai .message-content h1:first-child,
+ .message.ai .message-content h2:first-child,
+ .message.ai .message-content h3:first-child,
+ .message.ai .message-content h4:first-child,
+ .message.ai .message-content h5:first-child,
+ .message.ai .message-content h6:first-child {
+     margin-top: 0;
+ }
+
+ .message.ai .message-content blockquote {
+     border-left: 3px solid rgba(255, 179, 128, 0.5);
+     margin: 0.5rem 0;
+     padding-left: 1rem;
+     color: rgba(255, 255, 255, 0.8);
+     font-style: italic;
+ }
+
+ .message.ai .message-content table {
+     border-collapse: collapse;
+     width: 100%;
+     margin: 0.5rem 0;
+     background-color: rgba(0, 0, 0, 0.2);
+     border-radius: 6px;
+     overflow: hidden;
+ }
+
+ .message.ai .message-content th,
+ .message.ai .message-content td {
+     padding: 0.5rem;
+     text-align: left;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .message.ai .message-content th {
+     background-color: rgba(255, 179, 128, 0.2);
+     font-weight: 600;
+ }
+
+ .message.ai .message-content hr {
+     border: none;
+     border-top: 1px solid rgba(255, 255, 255, 0.2);
+     margin: 1rem 0;
  }

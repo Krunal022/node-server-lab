@@ -71,7 +71,21 @@ function addMessage(content, isUser = false) {
 
     const messageContent = document.createElement("div");
     messageContent.className = "message-content";
-    messageContent.textContent = content;
+    
+    // For AI messages, render Markdown; for user messages, use plain text
+    if (isUser) {
+        messageContent.textContent = content;
+    } else {
+        // Configure marked for security and proper rendering
+        marked.setOptions({
+            breaks: true,
+            gfm: true,
+            sanitize: false
+        });
+        
+        // Render Markdown content
+        messageContent.innerHTML = marked.parse(content);
+    }
 
     messageDiv.appendChild(avatar);
     messageDiv.appendChild(messageContent);
@@ -120,7 +134,7 @@ function hideAITyping() {
 
 // Simulate AI response
 function simulateAIResponse() {
-    showAITyping();
+    // showAITyping();
 
     // Socket event listener for AI response
     // AI response received from server and displayed in chat
@@ -153,6 +167,8 @@ function sendMessage() {
 
     // Clear input
     input.value = "";
+
+    showAITyping();
 
     // Simulate AI response
     // simulateAIResponse();
